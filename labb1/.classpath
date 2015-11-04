@@ -19,5 +19,10 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/JDKs/hibernate-release-5.0.2.Final/lib/java8/hibernate-java8-5.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JDKs/hibernate-release-5.0.2.Final/lib/required/hibernate-commons-annotations-5.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JDKs/hibernate-release-5.0.2.Final/lib/required/hibernate-core-5.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JDKs/hibernate-release-5.0.2.Final/lib/required/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/JDKs/hibernate-release-5.0.2.Final/lib/jpa/hibernate-entitymanager-5.0.2.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
