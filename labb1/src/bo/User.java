@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
+import db.UserDB;
+
 @NamedQueries({
 	@NamedQuery(name = "User.findByName", query = "SELECT u FROM "
 			+ "User u WHERE u.name = :name")
