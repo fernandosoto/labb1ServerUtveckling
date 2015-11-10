@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+	   	<h:form>
+	   		<h:panelGrid columns="2">
+	   			<h:outputText value="Email: "></h:outputText>
+	   			<h:inputText value="#{registerUserBean.email}"></h:inputText>
+	   			<h:outputText value="Password: "></h:outputText>
+	   			<h:inputSecret value="#{registerUserBean.pass}"></h:inputSecret>
+	   			<h:outputText value="First Name: "></h:outputText>
+	   			<h:inputText value="#{registerUserBean.firstName}"></h:inputText>
+	   			<h:outputText value="Last Name: "></h:outputText>
+	   			<h:inputText value="#{registerUserBean.lastName}"></h:inputText>
+	   			<h:outputText value="Birthday: "></h:outputText>
+	   			<h:inputText value="#{registerUserBean.birthday}">
+	   				<f:convertDateTime pattern="yyyy-mm-dd"></f:convertDateTime>:
+	   			</h:inputText>
+	   		</h:panelGrid>
+	   		<h:commandButton value="Create User!" action="#{registerUserBean.createUser}"></h:commandButton>
+	   	</h:form>
+	</ui:define>
+</ui:composition>
+</html>

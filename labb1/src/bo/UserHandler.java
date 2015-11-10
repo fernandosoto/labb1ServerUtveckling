@@ -2,6 +2,7 @@ package bo;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 
 public class UserHandler {
@@ -13,7 +14,12 @@ public class UserHandler {
 		else
 			return false;
 	}
-	
+	public static void createUser(String email, String pass, String firstName,
+			String lastName, Date birthday)
+	{
+		User u = new User(email,pass,firstName,lastName,birthday);
+		User.createUser(u);
+	}
 	public static Collection getUserNamesByName(String name){
 		ArrayList names = new ArrayList();
 		
@@ -21,7 +27,7 @@ public class UserHandler {
 		
 		for(Iterator it = users.iterator(); it.hasNext();){
 			User user = (User) it.next();
-			names.add(new String(user.getName()));
+			names.add(new String(user.getEmail()));
 		}
 		return names;
 	}

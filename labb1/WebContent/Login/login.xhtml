@@ -17,6 +17,7 @@
 				<h:inputSecret value="#{userBean.password}"></h:inputSecret>
 			</h:panelGrid>
 			<h:commandButton id="Login" value="Submit" action="#{userBean.doLogin}" ></h:commandButton>
+			<h:commandLink value="Register" action="register?faces-redirect=true"></h:commandLink>
 		</h:form>
 	</h:body>
 	</ui:define>

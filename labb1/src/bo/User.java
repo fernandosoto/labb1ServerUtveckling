@@ -1,9 +1,13 @@
 package bo;
 
 import java.util.Collection;
+import java.util.Date;
+
+import javax.persistence.*;
 
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
+import org.hibernate.annotations.Type;
 
 import db.UserDB;
 
@@ -12,22 +16,40 @@ import db.UserDB;
 			+ "User u WHERE u.name = :name")
 })
 
+@Entity
+@Table(name="T_USER")
 public class User {
-	
-	private String name;
-	private String pass;
+	@Id
+	@Column(name="T_USER_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column(name="T_USER_EMAIL")
 	private String email;
+	@Column(name="T_USER_PASS")
+	private String pass;
 	
-	public User(String userName, String password) {
-		this.name = userName;
-		this.pass = password;
+	@Column(name="T_USER_FIRSTNAME")
+	private String firstName;
+	@Column(name="T_USER_LASTNAME")
+	private String lastName;
+	@Column(name="T_USER_BIRTHDAY")
+	@Type(type="date")
+	private Date birthday;
+	
+	public User(){
+		
 	}
-	public String getName() {
-		return name;
+	
+	public User(String email, String pass, String firstName,
+			String lastName, Date birthday) {
+		this.email = email;
+		this.pass = pass;
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthday = birthday;
 	}
-	public void setName(String user) {
-		this.name = user;
-	}
+	
 	public String getPassword() {
 		return pass;
 	}
@@ -35,8 +57,45 @@ public class User {
 		this.pass = pass;
 	}
 	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public static Collection findByName(String name){
 		return UserDB.findByName(name);
 	}
-
+	
+	public static void createUser(User user){
+		UserDB.createUser(user);
+	}
 }

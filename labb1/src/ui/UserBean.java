@@ -35,6 +35,11 @@ public class UserBean {
 			return "failure";	
 		}
 	}
+	public String createUser(){
+		
+		
+		return "fail";
+	}
 	
 	public Collection getNames(String name){
 		return User.findByName(name);

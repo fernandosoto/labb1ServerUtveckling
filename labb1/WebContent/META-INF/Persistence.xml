@@ -9,10 +9,10 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
  <class>bo.User</class>
  <exclude-unlisted-classes>false</exclude-unlisted-classes>
  <properties>
- <property name="hibernate.connection.username" value="reine"/>
+ <property name="hibernate.connection.username" value="regularUser"/>
  <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
- <property name="hibernate.connection.password" value="forzabajen"/>
- <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/reine"/>
+ <property name="hibernate.connection.password" value="kthwebshop"/>
+ <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/mydb"/>
  <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"
 />
  </properties>
