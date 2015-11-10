@@ -26,8 +26,10 @@ public class UserBean {
 	}
 	
 	public String doLogin(){
+		System.out.println("doLogin!");
 		if(UserHandler.login(userName,password))
 		{
+			System.out.println("Success!");
 			return "homePage?faces-redirect=true";
 		}
 		else
