@@ -1,9 +1,5 @@
 package db;
 
-<<<<<<< HEAD
-public class UserDB {
-
-=======
 import java.util.Collection;
 import java.util.List;
 
@@ -25,5 +21,4 @@ public class UserDB {
 		
 		return result;
 	}
->>>>>>> branch 'master' of https://github.com/fernandosoto/labb1ServerUtveckling
 }
