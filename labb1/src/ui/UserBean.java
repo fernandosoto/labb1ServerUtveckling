@@ -1,16 +1,17 @@
 package ui;
 
 import java.util.Collection;
+import javax.faces.bean.*;
 
+import bo.User;
+import bo.UserHandler;
+
+@ManagedBean
+@SessionScoped
 public class UserBean {
 	private String userName;
 	private String password;
 	
-	
-	
-	public UserBean() {
-		this.userName = "Enter UserName!";
-	}
 	public String getUserName() {
 		return userName;
 	}
@@ -25,12 +26,21 @@ public class UserBean {
 	}
 	
 	public String doLogin(){
-		return "";
+		System.out.println("doLogin!");
+		if(UserHandler.login(userName,password))
+		{
+			System.out.println("Success!");
+			return "homePage?faces-redirect=true";
+		}
+		else
+		{
+			System.out.println("fail");
+			return "failure";	
+		}
 	}
 	
-	public Collection getNames(){
-		
-		return null;
+	public Collection getNames(String name){
+		return User.findByName(name);
 	}
 	
 	

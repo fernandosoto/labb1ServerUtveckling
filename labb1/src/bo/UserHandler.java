@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class UserHandler {
 	
 	public static boolean login(String user, String pass){
-		if(user.compareToIgnoreCase("root")==0 && pass.compareTo("qwerty")==0){
+		if(user.compareToIgnoreCase("root")==0 && pass.compareTo("qwe")==0){
 			return true;
 		}
 		else

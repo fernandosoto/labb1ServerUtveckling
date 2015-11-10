@@ -19,8 +19,6 @@ public class UserDB {
 				.setParameter("name", name)
 				.getResultList();
 		
-		
-		
 		return result;
 	}
 }
