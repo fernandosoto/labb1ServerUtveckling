@@ -19,6 +19,7 @@ public class UserDBTest {
 	public void testFindByEmail() {
 		ArrayList<User> userList = (ArrayList<User>) UserDB.findByEmail("fest@kth.se");
 		System.out.println(userList.toString());
+		assertEquals("fest@kth.se",userList.get(0).toString());
 	}
 	
 	
