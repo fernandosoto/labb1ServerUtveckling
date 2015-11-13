@@ -33,5 +33,6 @@
 	<classpathentry exported="true" kind="lib" path="D:/JDKs/javax.persistence_2.0.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/JDKs/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/JDKs/com.mysql.jdbc_5.1.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

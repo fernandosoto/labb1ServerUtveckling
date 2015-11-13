@@ -12,8 +12,8 @@ import org.hibernate.annotations.Type;
 import db.UserDB;
 
 @NamedQueries({
-	@NamedQuery(name = "User.findByName", query = "SELECT u FROM "
-			+ "User u WHERE u.name = :name")
+	@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM "
+			+ "User u WHERE u.email like :email")
 })
 
 @Entity
@@ -21,7 +21,7 @@ import db.UserDB;
 public class User {
 	@Id
 	@Column(name="T_USER_ID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name="T_USER_EMAIL")
 	private String email;
@@ -38,6 +38,11 @@ public class User {
 	
 	public User(){
 		
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return email;
 	}
 	
 	public User(String email, String pass, String firstName,
@@ -91,8 +96,8 @@ public class User {
 		this.id = id;
 	}
 
-	public static Collection findByName(String name){
-		return UserDB.findByName(name);
+	public static Collection findByEmail(String email){
+		return UserDB.findByEmail(email);
 	}
 	
 	public static void createUser(User user){

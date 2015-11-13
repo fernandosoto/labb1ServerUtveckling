@@ -41,8 +41,8 @@ public class UserBean {
 		return "fail";
 	}
 	
-	public Collection getNames(String name){
-		return User.findByName(name);
+	public Collection getEmail(String email){
+		return User.findByEmail(email);
 	}
 	
 	

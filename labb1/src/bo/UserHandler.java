@@ -20,15 +20,15 @@ public class UserHandler {
 		User u = new User(email,pass,firstName,lastName,birthday);
 		User.createUser(u);
 	}
-	public static Collection getUserNamesByName(String name){
-		ArrayList names = new ArrayList();
+	public static Collection getUserNamesByName(String email){
+		ArrayList emails = new ArrayList();
 		
-		Collection users = User.findByName(name);
+		Collection users = User.findByEmail(email);
 		
 		for(Iterator it = users.iterator(); it.hasNext();){
 			User user = (User) it.next();
-			names.add(new String(user.getEmail()));
+			emails.add(new String(user.getEmail()));
 		}
-		return names;
+		return emails;
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.hibernate.*;
@@ -15,23 +16,26 @@ import bo.User;
 
 public class UserDB {
 	
-	public static Collection findByName(String name){
+	public static Collection findByEmail(String email){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Labb1PU");
 		EntityManager em = emf.createEntityManager();
 		
-		List result = em.createNamedQuery("User.findByName")
-				.setParameter("name", name)
+		List result = em.createNamedQuery("User.findByEmail")
+				.setParameter("email", email)
 				.getResultList();
 		em.close();
 		emf.close();
 		return result;
 	}
+	
 	public static void createUser(User user)
 	{
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Labb1PU");
 		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
 		em.persist(user);
-		em.flush();
+		tx.commit();
 		em.close();
 		emf.close();
 	}
