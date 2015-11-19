@@ -17,7 +17,7 @@ import bo.User;
 public class UserDB {
 	
 	public static Collection findByEmail(String email){
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Labb1PU");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("community");
 		EntityManager em = emf.createEntityManager();
 		
 		List result = em.createNamedQuery("User.findByEmail")
@@ -30,7 +30,7 @@ public class UserDB {
 	
 	public static void createUser(User user)
 	{
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Labb1PU");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("community");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

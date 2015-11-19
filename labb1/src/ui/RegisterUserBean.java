@@ -3,12 +3,12 @@ package ui;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import bo.UserHandler;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class RegisterUserBean {
 
 	private String email;
@@ -52,7 +52,7 @@ public class RegisterUserBean {
 	public String createUser(){
 		UserHandler.createUser(email, pass, firstName, lastName, birthday);
 		
-		return "login";
+		return "login?faces-redirect=true";
 	}
 	
 	

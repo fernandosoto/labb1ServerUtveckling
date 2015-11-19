@@ -14,15 +14,8 @@ import bo.User;
 import db.UserDB;
 
 public class UserDBTest {
-
+	
 	@Test
-	public void testFindByEmail() {
-		ArrayList<User> userList = (ArrayList<User>) UserDB.findByEmail("fest@kth.se");
-		System.out.println(userList.toString());
-		assertEquals("fest@kth.se",userList.get(0).toString());
-	}
-	
-	
 	public void testCreateUser(){
 		String pattern = "yyyy/MM/dd";
 		SimpleDateFormat format = new SimpleDateFormat(pattern);
@@ -37,4 +30,10 @@ public class UserDBTest {
 		UserDB.createUser(user);
 	}
 
+	@Test
+	public void testFindByEmail() {
+		ArrayList<User> userList = (ArrayList<User>) UserDB.findByEmail("fest@kth.se");
+		System.out.println(userList.toString());
+		assertEquals("fest@kth.se",userList.get(0).toString());
+	}
 }

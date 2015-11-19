@@ -2,6 +2,12 @@
     <wb-module deploy-name="labb1">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="hibernate-entitymanager-5.0.2.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JDKs/hibernate-release-5.0.2.Final/lib/jpa/hibernate-entitymanager-5.0.2.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hibernate-jpa-2.1-api-1.0.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/JDKs/hibernate-release-5.0.2.Final/lib/required/hibernate-jpa-2.1-api-1.0.0.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="labb1"/>
         <property name="java-output-path" value="/labb1/build/classes"/>
     </wb-module>
